@@ -38,7 +38,7 @@ namespace LojaVirtual.Repositorio.Repositorios
 
         public void Remover(TEntity entity)
         {
-            Context.Set<TEntity>().Remove(entity);
+            Context.Remove(entity);
             Context.SaveChanges();
                
         }
