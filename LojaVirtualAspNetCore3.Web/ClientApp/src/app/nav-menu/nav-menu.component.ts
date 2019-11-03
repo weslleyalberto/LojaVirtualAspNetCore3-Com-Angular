@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-menu',
@@ -14,5 +15,17 @@ export class NavMenuComponent {
 
   toggle() {
     this.isExpanded = !this.isExpanded;
-  }
+    }
+
+
+    public usuarioLogado(): boolean {
+        return sessionStorage.getItem("usuario-autenticado") == "1";
+    }
+    constructor(private router: Router) {
+
+}
+    sair() {
+        sessionStorage.setItem("usuario-autenticado", "");
+        this.router.navigate(['/']);
+    }
 }
