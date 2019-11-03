@@ -1,0 +1,8 @@
+{
+  "ConnectionStrings": {
+    "SqlServerConnection": "Data Source=SQL5047.site4now.net;Initial Catalog=DB_A46ADA_aspangular;User Id=DB_A46ADA_aspangular_admin;Password=221030Wpa;"
+
+
+  }
+
+}
