@@ -1,4 +1,6 @@
+using LojaVirtual.Dominio.Interfaces;
 using LojaVirtual.Repositorio.Data;
+using LojaVirtual.Repositorio.Repositorios;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,6 +35,7 @@ namespace LojaVirtualAspNetCore3.Web
             services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0);
             services.AddDbContext<LojaVirtual3Context>(options => options.UseLazyLoadingProxies()
             .UseSqlServer(Configuration.GetConnectionString("SqlServerConnection"), m=> m.MigrationsAssembly("LojaVirtualAspNetCore3.Repositorio")));
+            services.AddScoped<IProdutoRepositorio, ProdutoRepositorio>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
